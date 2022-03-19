@@ -61,6 +61,10 @@ const img = {
   height: "100%",
   webkitUserDrag:"none"
 
+
+
+  //some changes
+
   // -webkit-user-drag:none;
 
 };
