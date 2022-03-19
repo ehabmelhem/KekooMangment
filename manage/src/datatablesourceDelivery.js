@@ -19,6 +19,7 @@ export const userColumns = [
     width: 230,
   },
 
+  ,
   {
     field: "status",
     headerName: "Status",

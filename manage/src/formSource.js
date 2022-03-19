@@ -69,7 +69,7 @@ export const userInputs = [
     },
     {
       id: 5,
-      label: "Stock",
+      label: "Amount",
       type: "text",
       placeholder: "in stock",
     },
