@@ -8,6 +8,7 @@ import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutline
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
 import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import GeoLocation from "../User/GeoLocation";
 
 const Navbar = () => {
   const { dispatch } = useContext(DarkModeContext);
@@ -18,6 +19,9 @@ const Navbar = () => {
         <div className="search">
           <input type="text" placeholder="Search..." />
           <SearchOutlinedIcon />
+        </div>
+        <div>
+          <GeoLocation></GeoLocation>
         </div>
         <div className="items">
           <div className="item">

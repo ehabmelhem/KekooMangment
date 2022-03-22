@@ -6,9 +6,30 @@ import React, { useRef, useEffect, useCallback, useState } from "react";
 import NewProduct from "../../pages/new/New";
 import Modal from 'react-modal';
 import UploadImage from '../UploadImage/UploadImage';
-
+import { MdClose } from 'react-icons/md';
 import styled from 'styled-components';
-import { GlobalStyle } from '../Modal/globalStyles';
+import { useSpring, animated, config } from 'react-spring';
+
+const Container2 = styled(animated.div)`
+top: 50px;
+left: 50px;
+right: auto;
+bottom: auto;
+margin-right:  -50%;
+transform: translate(-50%, -50%);
+width: 100px;
+height: 100px;
+display: inline-block;
+padding: 3em;
+background: #C7D2FE66;
+border-radius: 10px;
+z-index: 1;
+position: relative;
+backdrop-filter: blur(10px);
+border: 2px solid transparent;
+background-clip: border-box;
+cursor: pointer;
+`;
 
 const customStyles = {
   content: {
@@ -18,6 +39,11 @@ const customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
+    width: '500px',
+    height: '500px',
+    display: "inline-block",
+    zIndex: "1",
+    backgroundClip: "border-box",
   },
 };
 Modal.setAppElement('#root');
@@ -25,28 +51,17 @@ Modal.setAppElement('#root');
 const Datatable = () => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
-
+  const [data, setData] = useState(userRows);
+  const [showModal, setShowModal] = useState(false);
   function openModal() {
     setIsOpen(true);
   }
-
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
     subtitle.style.color = '#f00';
   }
-
   function closeModal() {
     setIsOpen(false);
   }
-
-  const [data, setData] = useState(userRows);
-
-  const [showModal, setShowModal] = useState(false);
-
-  // const openModal = () => {
-  //   setShowModal(prev => !prev);
-  // };
-
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
@@ -66,6 +81,16 @@ const Datatable = () => {
   color: #fff;
   font-size: 24px;
   cursor: pointer;
+`;
+  const CloseModalButton = styled(MdClose)`
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
 `;
   const clickOnAddProduct = () => {
     return (
@@ -98,60 +123,26 @@ const Datatable = () => {
     },
   ];
   return (
-    <div className="datatable">
+   <div>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
+         style={customStyles}
+     
       >
-        <button onClick={closeModal}>close</button>
-        
-        <div className="top">
-          <h1>New product</h1>
-        </div>
-        <div className="bottom">
-          <div className="left">
-            {/* <img
-                 src="https://icon-library.com/images/no-image-icon/no-image-icon-0.jpg"
-              alt=""
-            /> */}
-          </div>
-          <div className="right">
-            <form>
-              <div className="formInput">
-               
-              </div>
-              {/* {inputs.map((input) => (
-                <div className="formInput" key={input.id}>
-                  <label>{input.label}</label>
-                  <input type={input.type} placeholder={input.placeholder} />
-                </div>
-              ))} */}
-              <div className="App">
-                <UploadImage></UploadImage>
-              </div>
-              <button>Send</button>
-            </form>
-          </div>
-        </div>
-
-      </Modal>
+        <CloseModalButton
+          aria-label='Close modal'
+          onClick={closeModal}
+        />
+        <NewProduct></NewProduct>
+      </Modal> 
+      <div className="datatable">
       <div className="datatableTitle">
         Products
-
-
-
         <button className="link" onClick={openModal}>Add New</button>
-
-
-
-
-
-       
-
       </div>
+      
       <DataGrid
         className="datagrid"
         rows={data}
@@ -160,6 +151,7 @@ const Datatable = () => {
         rowsPerPageOptions={[9]}
         checkboxSelection
       />
+    </div>
     </div>
   );
 };
