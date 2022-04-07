@@ -22,14 +22,14 @@ const Featured = () => {
           Previous transactions processing. Last payments may not be included.
         </p>
         <div className="summary">
-          <div className="item">
+          {/* <div className="item">
             <div className="itemTitle">Target</div>
             <div className="itemResult negative">
               <KeyboardArrowDownIcon fontSize="small"/>
               <div className="resultAmount">$12.4k</div>
             </div>
-          </div>
-          <div className="item">
+          </div> */}
+          {/* <div className="item">
             <div className="itemTitle">Last Week</div>
             <div className="itemResult positive">
               <KeyboardArrowUpOutlinedIcon fontSize="small"/>
@@ -42,7 +42,7 @@ const Featured = () => {
               <KeyboardArrowUpOutlinedIcon fontSize="small"/>
               <div className="resultAmount">$12.4k</div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

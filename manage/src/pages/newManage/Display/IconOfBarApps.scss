@@ -1,0 +1,37 @@
+.IconUnActive {
+  cursor: pointer;
+  opacity: 11.7;
+  margin-left: 16px;
+  margin-right: 20px;
+  will-change: transform;
+  transition: transform 1150ms;
+  width: 1em;
+  height: 1em;
+  font-size: 2.1875rem;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  border: 4px solid rgb(255, 255, 255);
+  border-bottom: 4px solid rgb(255, 255, 255);
+  cursor: pointer;
+  opacity: 1;
+}
+.IconUnActive:hover {
+  transition: transform 150ms;
+  transform: translateY(-5px);
+}
+
+.IconActive {
+  cursor: pointer;
+  opacity: 11.7;
+  margin-left: 16px;
+  margin-right: 20px;
+  will-change: transform;
+  transition: transform 1150ms;
+  width: 1em;
+  height: 1em;
+  font-size: 2.1875rem;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  transition: transform 150ms;
+  transform: translateY(-5px);
+}

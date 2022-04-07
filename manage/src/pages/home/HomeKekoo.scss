@@ -1,0 +1,57 @@
+.page {
+    height: 30px;
+    color: black;
+    // background: darkblue;
+    position: sticky;
+    position: fixed;
+    
+}
+.heroBlock .ant-carousel,
+.heroBlock .ant-carousel div {
+  height: 100%;
+  border-radius: 188px;
+  outline: none;
+}
+
+.heroBlock .slick-dots li button {
+  background: rgb(0, 0, 0) !important;
+  margin-top: -27px;
+// margin-bottom: 100px;
+  margin-bottom: 22px;
+}
+
+.heroBlock .slick-dots li.slick-active button {
+  background: #8f18ff !important;
+//   width:  23px;
+margin-bottom: 42px;
+
+}
+
+.heroBlock .content {
+  max-width: 640px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0 80px;
+  position: fixed;
+  display: block;
+}
+
+.heroBlock h3 {
+//   font-size: 30px
+  line-height: 1.5;
+//   margin: 0 0 40px;
+}
+
+.heroBlock p {
+  margin: 0 0 10px;
+}
+
+.heroBlock .btnHolder {
+  height: auto !important;
+}
+
+.heroBlock .btnHolder button,
+.heroBlock .btnHolder .fas {
+  margin: 0 10px 0 0;
+}

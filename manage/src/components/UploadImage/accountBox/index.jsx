@@ -4,6 +4,7 @@ import { ProductInfoPage } from "./ProductInfoPage";
 import { motion } from "framer-motion";
 import { AccountContext } from "./accountContext";
 import { MoreInfoPage } from "./MoreInfoPage";
+import "../MoreInfoModal.scss";
 import {
   BoldLink,
   BoxContainer,
@@ -12,8 +13,10 @@ import {
   MutedLink,
   SubmitButton,
 } from "./common";
+import StepsKekoo from "../../chart/StepsKekoo";
+
 const BoxContainer1 = styled.div`
-  width: 280px;
+  width: 500px;
   min-height: 550px;
   display: flex;
   flex-direction: column;
@@ -26,7 +29,7 @@ const BoxContainer1 = styled.div`
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -35,16 +38,16 @@ const TopContainer = styled.div`
 `;
 
 const BackDrop = styled(motion.div)`
-  width: 160%;
-  height: 550px;
+  // width: 160%;
+  // height: 550px;
   position: absolute;
   display: flex;
-  flex-direction: column;
-  border-radius: 50%;
-  transform: rotate(60deg);
-  top: -290px;
-  left: -70px;
-  background: white;
+  // flex-direction: column;
+  // border-radius: 50%;
+  // transform: rotate(60deg);
+  // top: -290px;
+  // left: -70px;
+  // background: white;
 `;
 
 const HeaderContainer = styled.div`
@@ -100,7 +103,7 @@ const expandingTransition = {
   stiffness: 30,
 };
 
-export function AccountBox(props) {
+export function AccountBox({ closemodal }) {
   const [isExpanded, setExpanded] = useState(false);
   const [active, setActive] = useState("signin");
 
@@ -137,20 +140,32 @@ export function AccountBox(props) {
             variants={backdropVariants}
             transition={expandingTransition}
           />
+
           {active === "signin" && (
-            <HeaderContainer>
-              <HeaderText>Details for the product </HeaderText>
-              <HeaderText></HeaderText>
-            </HeaderContainer>
+
+            <div>
+              <div className="steps">
+                <StepsKekoo currentstep={1} description={"Information about the product"} numbersteps={3}></StepsKekoo>
+              </div>
+              <HeaderContainer>
+                <HeaderText>Details for the product </HeaderText>
+                <HeaderText></HeaderText>
+              </HeaderContainer>
+            </div>
           )}
           {active === "signup" && (
-            <HeaderContainer>
-              <HeaderText>More Information for customer.</HeaderText>
-            </HeaderContainer>
+            <div>
+              <div className="steps">
+                <StepsKekoo currentstep={2} description={"Information about the product"} numbersteps={3}></StepsKekoo>
+              </div>
+              <HeaderContainer>
+                <HeaderText>More Information for customer.</HeaderText>
+              </HeaderContainer>
+            </div>
           )}
         </TopContainer>
         <InnerContainer>
-          {active === "signin" && <ProductInfoPage /> }
+          {active === "signin" && <ProductInfoPage closemodal={closemodal} />}
           {active === "signup" && <MoreInfoPage />}
         </InnerContainer>
       </BoxContainer1>

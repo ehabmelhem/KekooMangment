@@ -1,6 +1,7 @@
 import "./MoreInfoModal.scss";
 import styled from "styled-components";
 import { AccountBox } from "./accountBox";
+import StepsKekoo from "../chart/StepsKekoo";
 const AppContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -10,10 +11,10 @@ const AppContainer = styled.div`
   justify-content: center;
 `;
 
-function MoreInfoModal() {
+function MoreInfoModal({closemodal}) {
   return (
     <AppContainer>
-      <AccountBox />
+      <AccountBox closemodal={closemodal} />
     </AppContainer>
   );
 }

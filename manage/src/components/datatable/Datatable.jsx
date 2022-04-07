@@ -9,7 +9,8 @@ import UploadImage from '../UploadImage/UploadImage';
 import { MdClose } from 'react-icons/md';
 import styled from 'styled-components';
 import { useSpring, animated, config } from 'react-spring';
-
+import { Steps, Divider } from 'antd';
+import StepsKekoo from "../chart/StepsKekoo";
 const Container2 = styled(animated.div)`
 top: 50px;
 left: 50px;
@@ -62,6 +63,7 @@ const Datatable = () => {
   function closeModal() {
     setIsOpen(false);
   }
+
   const handleDelete = (id) => {
     setData(data.filter((item) => item.id !== id));
   };
@@ -92,13 +94,7 @@ const Datatable = () => {
   padding: 0;
   z-index: 10;
 `;
-  const clickOnAddProduct = () => {
-    return (
-      <div>
-        render( <NewProduct ></NewProduct>);
-      </div>
-    )
-  };
+ 
 
   const actionColumn = [
     {
@@ -135,7 +131,7 @@ const Datatable = () => {
           aria-label='Close modal'
           onClick={closeModal}
         />
-        <NewProduct></NewProduct>
+        <NewProduct closeModalUpload={closeModal}></NewProduct>
       </Modal> 
       <div className="datatable">
       <div className="datatableTitle">

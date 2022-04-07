@@ -29,14 +29,6 @@ const Slideshow = ({ images, source }) => {
   setIndex(-1)
   };
  
-  // useEffect(
-  //   () => () => {
-  //     setIndex(0);
-  //     images.forEach(file => URL.revokeObjectURL(file.preview));
-  //   },
-  //   [images]
-  // );
-
 
   return (
     <div className="slideshow">

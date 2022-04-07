@@ -5,7 +5,7 @@ export const BoxContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 10px;
+  margin-top: -20px;
 `;
 
 export const FormContainer = styled.form`
@@ -29,7 +29,15 @@ export const BoldLink = styled.a`
   text-decoration: none;
   margin: 0 4px;
 `;
-
+export const BackLink = styled.a`
+  font-size: 11px;
+  color: Red;
+  margin-left: -223px;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 10 4px;
+  
+`;
 export const Input = styled.input`
   width: 100%;
   height: 42px;

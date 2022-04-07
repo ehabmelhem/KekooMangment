@@ -6,9 +6,9 @@ const GeoLocation = () => {
     //  Find my IP address
     useEffect(() => {
         const interval = setInterval(() => {
-            console.log('This will run every second!');
+            // console.log('This will run every second!');
             getUserGeolocationDetails()
-            console.log("first")
+            // console.log("first")
           }, 5000);
           return () => clearInterval(interval);
     },[]);

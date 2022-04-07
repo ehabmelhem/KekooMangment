@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* font-family: 'Intro'; */
+  box-sizing: border-box;
+}
+.glassmorphism {
+  position: relative;
+  display: flex;
+  top: 0;
+  left: 225px;
+  width: 0;
+  height: 0;
+  color: #fff;
+  font-size: 2.1em;
+  /* Letter-spacing: 2px; */
+}
+section {
+  position: relative;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  /* border-radius: 20px; */
+  width: fit-content;
+  height: fit-content;
+}
+
+.clock {
+  width: fit-content;
+  height: fit-content;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  left: 0;
+}
+.clock .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10;
+  margin-top: 20px;
+  left: 0;
+  color: black;
+}
+.clock .container h2 {
+  color: rgb(0, 0, 0);
+  transition: transform 250ms;
+}
+.clock .container h2:nth-child(odd) {
+  padding: 0px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 2spx rgba(0, 0, 0, 0.1);
+  margin: 0 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+.clock .container h2:hover {
+  transition: transform 1150ms;
+  transform: translateY(-5px);
+  color: rgb(0, 97, 241);
+  opacity: 0.9;
+}
+.clock .container h2#sec {
+  color: #006eff;
+}
+#ampm {
+  position: relative;
+  top: -50px;
+  font-size: 2em;
+  color: #fff;
+  font-weight: 700;
+}

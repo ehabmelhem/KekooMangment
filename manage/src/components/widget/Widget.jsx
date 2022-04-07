@@ -9,7 +9,7 @@ const Widget = ({ type }) => {
   let data;
 
   //temporary
-  const amount = 100;
+  const amount = 99;
   const diff = 20;
 
   switch (type) {
@@ -58,6 +58,19 @@ const Widget = ({ type }) => {
         ),
       };
       break;
+      case "profile":
+        data = {
+          title: "profile",
+          isMoney: true,
+          link: "",
+          icon: (
+            <MonetizationOnOutlinedIcon
+              className="icon"
+              style={{ backgroundColor: "rgba(0, 128, 0, 0.2)", color: "green" }}
+            />
+          ),
+        };
+        break;
     case "balance":
       data = {
         title: "BALANCE",
@@ -81,18 +94,18 @@ const Widget = ({ type }) => {
   return (
     <div className="widget">
       <div className="left">
-        <span className="title">{data.title}</span>
+        <span className="title">{data.title != "profile" && data.title}</span>
         <span className="counter">
-          {data.isMoney && "$"} {amount}
+          { data.title != "profile" && data.isMoney && "$"} {data.title != "profile" && amount}
         </span>
-        <span className="link">{data.link}</span>
+        <span className="link">{data.title != "profile" && data.link}</span>
       </div>
       <div className="right">
         <div className="percentage positive">
-          <KeyboardArrowUpIcon />
-          {diff} %
+         {data.title != "profile" && <KeyboardArrowUpIcon />}
+          {data.title != "profile" && diff} {data.title != "profile" && "%"}
         </div>
-        {data.icon}
+        {data.title != "profile" && data.icon}
       </div>
     </div>
   );

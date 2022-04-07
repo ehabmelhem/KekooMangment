@@ -13,6 +13,7 @@
     "dom-helpers": "^5.2.1",
     "experss": "^0.0.1-security",
     "express": "^4.17.3",
+    "gsap": "^3.10.2",
     "hoist-non-react-statics": "^3.3.2",
     "hyphenate-style-name": "^1.0.4",
     "is-in-browser": "^1.1.3",

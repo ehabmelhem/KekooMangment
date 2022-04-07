@@ -1,38 +1,36 @@
-import Sidebar from "../../components/sidebar/Sidebar";
 import React, { useMemo, useEffect, useState, Fragment } from "react";
-import Navbar from "../../components/navbar/Navbar";
 import "./home.scss";
 import Widget from "../../components/widget/Widget";
 import Featured from "../../components/featured/Featured";
-import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
-import ModelKekoo from "../../components/Model_kekoo/Model_kek"
-import SlideImages from "../../components/chart/SlideImages";
-import HomeKekoo from "./HomeKekoo";
+
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
 const Home = () => {
+  const [viewProfile, setViewProfile] = useState(true);
+  
   return (
-
     <div className="home">
-      <Sidebar />
+  {/* <Sidebar></Sidebar> */}
+       
+      {/* <Sidebar /> */}
       <div className="homeContainer">
-        <Navbar />
-         <div className="widgets">
+        {/* <Navbar viewProfile={viewProfile} /> */}
+        <div className="widgets">
+          {/* <Widget type="user" /> */}
           <Widget type="order" />
           <Widget type="earning" />
           <Widget type="balance" />
         </div>
         <div className="charts">
           <Featured />
-          <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
         </div>
-        <div className="listContainer">
+        <div className="listContainer"> 
           <div className="listTitle">Latest Transactions</div>
           <Table />
-        </div> 
-       </div>
-
-      </div> 
+        </div>
+      </div>
+    </div>
   );
 };
 

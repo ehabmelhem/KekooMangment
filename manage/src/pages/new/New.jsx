@@ -10,10 +10,11 @@ import UploadImage from '../../components/UploadImage/UploadImage';
 import * as React from 'react';
 import styled from 'styled-components';
 import UploadVideo from "../../components/UploadImage/UploadVideo";
+import StepsKekoo from "../../components/chart/StepsKekoo";
 
 
 
-const New = ({ inputs, title }) => {
+const New = ({ inputs, title , closeModalUpload }) => {
   const [images, setImages] = React.useState([]);
  
   return (
@@ -28,18 +29,21 @@ const New = ({ inputs, title }) => {
           <div className="right">
             <form>
               <div className="formInput">
-               <h3 className="headPost">Create new post</h3>
               </div>
-            </form>
+              </form>
           </div>
         </div> 
-        <div className="App">
 
+        <div className="App">
+         {/* currentstep = {0,1,2} numbersteps={Number} */}
+         <div className="step0">
+        <StepsKekoo currentstep={0} description={"Upload video and images"} numbersteps={3}></StepsKekoo>
+        </div>
                  {/* Image Upload */}
                 <UploadImage images={images} setImages={setImages}></UploadImage>
       
                  {/* Video Upload */}
-                <UploadVideo width={400} height={300} images={images}></UploadVideo>
+                <UploadVideo closeModalUpload={closeModalUpload} images={images}></UploadVideo>
                 
               </div>
             </div>
