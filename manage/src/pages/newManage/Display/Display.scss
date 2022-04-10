@@ -111,7 +111,7 @@ body {
 }
 
 // Window in the main
-.display {
+.displaySmall {
   width: calc(90% - 235px);
   height: calc(100vh - 180px);
   margin-top: 80px;
@@ -131,6 +131,12 @@ body {
   will-change: transform, opacity;
   // transition: opacity ease-in-out 0.4s;
   animation: drop-in 2000ms;
+}
+.displayExpand {
+  width: 95%;
+  height: calc(100vh - 97px);
+  margin-top: 10px;
+  margin-left: 49px;
 }
 
 // Person pop out in the screen
@@ -182,4 +188,36 @@ body {
 }
 .main {
   overflow: hidden;
+}
+.RightButtom_ExpandClose {
+  display: flex;
+  min-height: calc(100vh - 98vh);
+  border-radius: 999px;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  overflow-wrap: break-word;
+  border-radius: 4.75rem;
+  flex-direction: row-reverse;
+  width: calc(90% + 20px);
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.RightButtom_ExpandOpen {
+  width: calc(100% - 20px);
+  margin-top: -10px;
+  margin-left: 0px;
+}
+.DisplayIconsRightButtom {
+  display: flex;
+  transition: opacity 250ms ease 0s;
+}
+.IconExpandOpen {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4px;
+  margin-left: 120px;
+}
+.IconExpandClose {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4px;
 }
