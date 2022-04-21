@@ -23,7 +23,7 @@ import StatisticsPage from "../StatsDispaly/StatisticsPage";
 
 import OpenResize_icon from "../../../Images/OpenResize_icon.PNG";
 import CloseResize_icon from "../../../Images/CloseResize_icon.PNG";
-
+import Draw from "../DrawDisplay/Draw";
 const Display = () => {
   const [CountPages, setCountPages] = React.useState(0);
   const [Expand_Open, setExpand_Open] = React.useState(false);
@@ -88,6 +88,7 @@ const Display = () => {
           />
         </IconButton>
       </div> */}
+      {/* <Draw></Draw> */}
       <Box
         className={
           Expand_Open === true
