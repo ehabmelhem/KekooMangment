@@ -5,18 +5,23 @@
   background-color: white;
 
   .top {
-    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin-top: -135px;
     .logo {
       font-size: 20px;
       font-weight: bold;
       color: #6439ff;
     }
   }
-
+.imglogo {
+  height: 205px;
+  width: 189px;
+  margin-top: 103px;
+}
+  
+  
   hr {
     height: 0;
     border: 0.5px solid rgb(230, 227, 227);
@@ -24,8 +29,8 @@
 
   .center {
     padding-left: 10px;
-
-    ul {
+    margin-top: 11px;
+        ul {
       list-style: none;
       margin: 0;
       padding: 0;

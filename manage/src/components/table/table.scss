@@ -13,16 +13,25 @@
   }
 
   .status {
-    padding: 5px;
-    border-radius: 5px;
-
+    padding: 9px;
+    border-radius: 10px;
+    font-size: 1.3em;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 2spx rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+    cursor: pointer;
+    font-weight: bold;
     &.Approved {
       color: green;
       background-color: rgba(0, 128, 0, 0.151);
     }
     &.Pending {
-      color: goldenrod;
-      background-color: rgba(189, 189, 3, 0.103);
+      color: rgb(219, 170, 44);
+      background-color: rgba(250, 250, 27, 0.103);
     }
   }
+}
+.RowFont {
+  font-weight: bold;
 }

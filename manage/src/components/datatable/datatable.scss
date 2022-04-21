@@ -37,7 +37,7 @@
   }
 
   .cellWithStatus {
-    padding: 5px;
+    padding: 1px;
     border-radius: 5px;
 
     &.active {
@@ -76,3 +76,16 @@
     }
   }
 }
+
+.customStyles {
+  content: {
+    top: 50px;
+    left: 50px;
+    right: auto;
+    bottom: auto;
+    margin-right:  -50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+  };
+};

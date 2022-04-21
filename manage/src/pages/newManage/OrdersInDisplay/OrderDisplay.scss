@@ -1,0 +1,98 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 25px 0;
+}
+.heading h1 {
+  font-family: "raleway";
+  color: #666;
+  font-size: 3.5em;
+}
+.heading p {
+  font-family: "raleway";
+  color: #666;
+  font-size: 16px;
+  padding: 5px;
+}
+.orders {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.order {
+  height: 100%;
+  width: 100%;
+  padding: 25px 20px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+  background: linear-gradient(#2bdbdc 0%, #0067f4 100%);
+  margin: 15px;
+  border-radius: 50px;
+  text-align: center;
+  transition: all 0.8s;
+}
+.order .icon {
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin: 0 auto;
+}
+.order .icon img {
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+  border-radius: 8px;
+}
+
+.price {
+  font-size: 2.5em;
+  color: #fff;
+  font-family: "arial";
+  text-align: center;
+  padding: 10px;
+}
+.price span {
+  font-size: 22px;
+  font-weight: 300;
+}
+.content p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 22px;
+  color: #f2f2f2;
+  font-family: "raleway";
+}
+.nameOfClient {
+  text-align: center;
+  color: #fff;
+  font-family: "Century Gothic";
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.content button {
+  color: rgb(0, 0, 0);
+  width: 180px;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 25px;
+  background: #f2f2f2;
+  border: 0;
+  margin: 25px 0;
+}
+.content button:hover {
+  color: rgb(0, 97, 241);
+}
+.StartBring:hover {
+  cursor: pointer;
+}

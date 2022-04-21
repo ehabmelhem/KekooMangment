@@ -12,16 +12,57 @@ import SettingsSystemDaydreamOutlinedIcon from "@mui/icons-material/SettingsSyst
 import PsychologyOutlinedIcon from "@mui/icons-material/PsychologyOutlined";
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import { Link } from "react-router-dom";
-import { DarkModeContext } from "../../context/darkModeContext";
 import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
+import { Avatar } from '@material-ui/core'
+
+import Logo from "../../Images/logo_theme.png";
 
 const Sidebar = () => {
+
+  const recentItems = (topic) => (
+    <div className="recentItem">
+      <span className="sidebar_hash">#</span>
+      <p>{topic}</p>
+    </div>
+  );
   const { dispatch } = useContext(DarkModeContext);
   return (
+    // <div className="sidebar">
+    //   <div className="sidebar_top">
+    //     <img 
+    //       src="https://images.unsplash.com/photo-1560345573-9f453083c335?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NjR8fHxlbnwwfHx8&auto=format&fit=crop&w=500&q=60"
+    //       alt="cover pics" 
+    //     />
+    //     <Avatar className="sidebar_avatar">
+    //     Rwed.kabaha@gmail.com
+    //     </Avatar>
+    //     <h2>Rwed Kabha</h2>
+    //     <h4>Rwed.kabaha@gmail.com</h4>
+    //   </div>
+    //   <div className="sidebar_stats">
+    //     <div className="sidebar_stat">
+    //       <p>Who viewed you</p>
+    //       <p className="stat_number">2,432</p>
+    //     </div>
+    //     <div className="sidebar_stat">
+    //       <p>Views on post</p>
+    //       <p className="stat_number">1,232</p>
+    //     </div>
+    //   </div>
+
+    //   <div className="sidebar_bottom">
+    //     <p>Recent</p>
+    //     {recentItems("reactjs")}
+    //     {recentItems('JavaScript')}
+    //     {recentItems('Ruby')}
+    //     {recentItems('Ruby on Rails')}
+    //   </div>
+    // </div>
     <div className="sidebar">
       <div className="top">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <span className="logo">Kekoo</span>
+          <img className="imglogo" src={Logo}></img>
         </Link>
       </div>
       <hr />
@@ -87,15 +128,15 @@ const Sidebar = () => {
             <SettingsApplicationsIcon className="icon" />
             <span>Settings</span>
           </li>
-          <p className="title">USER</p>
-          <li>
+          {/* <p className="title">USER</p> */}
+          {/* <li>
             <AccountCircleOutlinedIcon className="icon" />
             <span>Profile</span>
-          </li>
-          <li>
+          </li> */}
+          {/* <li>
             <ExitToAppIcon className="icon" />
             <span>Logout</span>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="bottom">

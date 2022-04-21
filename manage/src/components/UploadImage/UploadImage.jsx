@@ -1,6 +1,9 @@
-import React, { useMemo, useEffect, useState } from "react";
+import React, { useMemo, useEffect, useState, Fragment } from "react";
 import ReactDOM from "react-dom";
 import { useDropzone } from "react-dropzone";
+import "./UploadImage.scss";
+import AnimationVideo from '../../Images/upload.gif'
+import UploadVideo from "./UploadVideo";
 
 const baseStyle = {
   flex: 1,
@@ -11,8 +14,8 @@ const baseStyle = {
   borderWidth: 2,
   borderRadius: 2,
   borderColor: "#eeeeee",
-  borderStyle: "dashed",
-  backgroundColor: "#fafafa",
+  // borderStyle: "dashed",
+  // backgroundColor: "#fafafa",
   color: "#bdbdbd",
   outline: "none",
   transition: "border .24s ease-in-out"
@@ -57,19 +60,18 @@ const thumbInner = {
 
 const img = {
   display: "block",
-  width: "auto",
-  height: "100%",
-  webkitUserDrag:"none"
-
-
-
-  //some changes
-
-  // -webkit-user-drag:none;
-
+  width: "10px",
+  height: "10px",
+  webkitUserDrag: "none"
+};
+const AnimationVideoCss = {
+  display: "block",
+  margin: 'auto',
+  width: 150,
+  height: 120,
 };
 
-function StyledDropzone(props) {
+function StyledDropzone({setImages,images}) {
   const [files, setFiles] = useState([]);
   const {
     getRootProps,
@@ -84,13 +86,24 @@ function StyledDropzone(props) {
     noClick: true,
     noKeyboard: true,
     onDrop: acceptedFiles => {
+      let temp=[...acceptedFiles]
+      temp.forEach(file => URL.revokeObjectURL(file.preview));
       setFiles(
-        acceptedFiles.map(file =>
+        temp.map(file =>
           Object.assign(file, {
             preview: URL.createObjectURL(file)
           })
         )
       );
+
+      setImages(images=>
+        temp.map(file =>
+          Object.assign(file, {
+            preview: URL.createObjectURL(file)
+          })
+        )
+      );
+    
     }
   });
 
@@ -104,22 +117,16 @@ function StyledDropzone(props) {
     [isDragActive, isDragReject]
   );
 
-  const thumbs = files.map(file => (
-    <div style={thumb} key={file.name}>
-      <div style={thumbInner}>
-        <img src={file.preview} style={img} />
-      </div>
-    </div>
-  ));
+  // const thumbs = files.map(file => (
+  //   <div style={thumb} key={file.name}>
+  //     <div style={thumbInner}>
+  //       <img src={file.preview}  />
+  //     </div>
+  //   </div>
+  // ));
 
-  useEffect(
-    () => () => {
-      // Make sure to revoke the data uris to avoid memory leaks
-      files.forEach(file => URL.revokeObjectURL(file.preview));
-    },
-    [files]
-  );
-
+ 
+  
   const filepath = acceptedFiles.map(file => (
     <li key={file.path}>
       {file.path} - {file.size} bytes
@@ -130,17 +137,26 @@ function StyledDropzone(props) {
     <div className="container">
       <div {...getRootProps({ style })}>
         <input {...getInputProps()} />
-        <p>Drag 'n' drop some files here</p>
-        <button type="button" onClick={open}>
-          Open File Dialog
+        <Fragment>
+          <img src={AnimationVideo} className="AnimationVideoCss" />
+        </Fragment>
+        <h3>Drag and drop photos</h3>
+        <button className="buttonselect" type="button" onClick={open}>
+          Select From computer
         </button>
+        {console.log(files.length)}
+        {files.length > 0 && 
+        <button className="buttonselectGreen uploadImageDone" type="button" onClick={open}>
+          Select From computer
+        </button>
+        }
       </div>
       <aside>
       </aside>
-      <aside style={thumbsContainer}>{thumbs}</aside>
+      {/* <aside  className="containerShowImages">{thumbs}</aside> */}
     </div>
   );
 }
 
-ReactDOM.render(<StyledDropzone />, document.getElementById("root"));
+// ReactDOM.render(<StyledDropzone />, document.getElementById("root"));
 export default StyledDropzone;

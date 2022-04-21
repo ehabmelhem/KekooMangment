@@ -1,0 +1,223 @@
+@keyframes drop-in {
+  from {
+    transform: rotate(1deg) translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg) translateY(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// Left side
+
+.LeftSide {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  background-clip: border-box;
+  overflow: visible;
+  opacity: 0.6;
+  background: #fff;
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  width: 3.1rem;
+  height: 10rem;
+  left: 0;
+  margin-top: -80px;
+}
+.LeftSide :hover {
+  color: -webkit-link;
+}
+.BackIconLeftSide {
+}
+
+.BackIconLeftSide :hover {
+}
+
+//Right Side
+
+.RightSide {
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  flex-direction: column;
+  overflow-wrap: break-word;
+  background-clip: border-box;
+  overflow: visible;
+  opacity: 0.6;
+  background: #fff;
+  cursor: pointer;
+  position: fixed;
+  top: 50%;
+  width: 3.1rem;
+  height: 10rem;
+  right: 0;
+  margin-top: -80px;
+}
+.RightSide :hover {
+  color: -webkit-link;
+}
+
+.NextIconRightSide {
+  margin: auto;
+  align-items: center;
+}
+
+.NextIconRightSide :hover {
+  color: -webkit-link;
+}
+
+@keyframes grow-and-shrink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+body {
+  min-height: 100vh;
+}
+
+// Window in the main
+.displaySmall {
+  width: calc(90% - 235px);
+  height: calc(100vh - 180px);
+  margin-top: 80px;
+  margin-left: 219px;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: white;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 29px;
+  // animation: grow-and-shrink 8000ms;
+  // animation-iteration-count: infinite;
+  // animation-timing-function: ease-in-out;
+  box-shadow: 0px 25px 50px rgba(0, 0, 0, 0.15);
+  will-change: transform, opacity;
+  // transition: opacity ease-in-out 0.4s;
+  animation: drop-in 2000ms;
+}
+.displayExpand {
+  width: 95%;
+  height: calc(100vh - 97px);
+  margin-top: 10px;
+  margin-left: 49px;
+}
+
+// Person pop out in the screen
+.PopOutPerson {
+  position: fixed;
+  z-index: 1001;
+  left: 110px;
+  bottom: 105px;
+  opacity: 1;
+  transform: scaleX(1) translateX(0px);
+  pointer-events: auto;
+  transform-origin: left center;
+  position: relative;
+  background: rgb(0, 0, 0);
+  border-radius: 24px;
+  padding: 24px 32px;
+  z-index: 2;
+  color: rgb(10, 12, 16);
+}
+
+.comment {
+  font-size: calc(1.0625rem);
+  margin-bottom: 16px;
+  line-height: calc(1em + 0.725rem);
+  -webkit-font-smoothing: antialiased;
+  width: 350px;
+  background-color: wheat;
+  min-height: 87px;
+  border-radius: 24px;
+  padding: 24px 32px;
+}
+
+.AddNewProd {
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  width: 550px;
+  height: 550px;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.displayContent {
+  overflow: scroll;
+  border-radius: 70px;
+}
+.main {
+  overflow: hidden;
+}
+.RightButtom_ExpandClose {
+  display: flex;
+  min-height: calc(100vh - 98vh);
+  border-radius: 999px;
+  transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  overflow-wrap: break-word;
+  border-radius: 4.75rem;
+  flex-direction: row-reverse;
+  width: calc(90% + 20px);
+  margin-top: -10px;
+  margin-left: -10px;
+}
+.RightButtom_ExpandOpen {
+  width: calc(100% - 20px);
+  margin-top: -10px;
+  margin-left: 0px;
+}
+.DisplayIconsRightButtom {
+  display: flex;
+  transition: opacity 250ms ease 0s;
+}
+.IconExpandOpen {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4px;
+  margin-left: 120px;
+}
+.IconExpandClose {
+  width: 20px;
+  height: 20px;
+  opacity: 0.4px;
+}
